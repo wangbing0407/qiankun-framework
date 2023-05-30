@@ -17,12 +17,21 @@
         </el-menu-item>
       </el-menu>
     </div>
-    <div id="nav">
-      <el-descriptions title="我是用initGlobalState设置的全局变量">
-        <el-descriptions-item label="姓名">{{ info.name }}</el-descriptions-item>
-        <el-descriptions-item label="年龄">{{ info.age }}</el-descriptions-item>
-      </el-descriptions>
-      <el-button type="primary" size="small" round @click="setGlobalVariable">主应用设置全局参数</el-button>
+    <div id="nav" class="info">
+      <div>
+        <el-descriptions title="我是用initGlobalState设置的全局人员变量">
+          <el-descriptions-item label="姓名">{{ info.name }}</el-descriptions-item>
+          <el-descriptions-item label="年龄">{{ info.age }}</el-descriptions-item>
+        </el-descriptions>
+        <el-button type="primary" size="small" round @click="setGlobalVariable">主应用设置全局人员参数</el-button>
+      </div>
+      <div>
+        <el-descriptions title="我是用props设置的全局汽车变量">
+          <el-descriptions-item label="品牌">{{ carPrices.name }}</el-descriptions-item>
+          <el-descriptions-item label="价格">{{ carPrices.price }}</el-descriptions-item>
+        </el-descriptions>
+        <el-button type="primary" size="small" round @click="setCarPrice">主应用设置全局汽车参数</el-button>
+      </div>
     </div>
     <div id="appContainer"></div>
     <router-view/>
@@ -39,6 +48,11 @@ export default {
         name: '',
         age: null
       }
+    }
+  },
+  computed: {
+    carPrices() {
+      return this.$store.state.carInfo
     }
   },
   mounted() {
@@ -64,6 +78,13 @@ export default {
     },
     setGlobalVariable() {
       actions.setGlobalState({name: '张三', age: 18});
+    },
+    setCarPrice() {
+      let carInfo = {
+        name: '比亚迪',
+        price: '19W',
+      }
+      this.$store.commit('setCarInfo', carInfo)
     }
   }
 }
@@ -89,5 +110,8 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.info {
+  display: flex;
 }
 </style>

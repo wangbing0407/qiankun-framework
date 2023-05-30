@@ -16,7 +16,7 @@ const apps = [
     entry: 'http://localhost:9912',
     container: '#appContainer',
     activeRule: '/app-vue-hash',
-    props: { data: {} },
+    props: { data: { store, router } },
   },
 ]
 
