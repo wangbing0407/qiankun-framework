@@ -1,0 +1,28 @@
+{
+  "name": "qiankun-pro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm-run-all --serial install:*",
+    "install:portal": "cd portal && npm install",
+    "install:app-vue-hash": "cd app-vue-hash && npm install",
+    "start": "npm-run-all --parallel start:*",
+    "start:portal": "cd portal && npm start",
+    "start:app-vue-hash": "cd app-vue-hash && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangbing0407/qiankun-framework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangbing0407/qiankun-framework/issues"
+  },
+  "homepage": "https://github.com/wangbing0407/qiankun-framework#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
