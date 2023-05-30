@@ -17,22 +17,56 @@
         </el-menu-item>
       </el-menu>
     </div>
+    <div id="nav">
+      <el-descriptions title="我是用initGlobalState设置的全局变量">
+        <el-descriptions-item label="姓名">{{ info.name }}</el-descriptions-item>
+        <el-descriptions-item label="年龄">{{ info.age }}</el-descriptions-item>
+      </el-descriptions>
+      <el-button type="primary" size="small" round @click="setGlobalVariable">主应用设置全局参数</el-button>
+    </div>
     <div id="appContainer"></div>
     <router-view/>
   </div>
 </template>
 
 <script>
-  export default {
-    methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
+import actions from './utils/actions'; 
+
+export default {
+  data() {
+    return {
+      info: {
+        name: '',
+        age: null
       }
     }
+  },
+  mounted() {
+    let data = {
+      name: '张三',
+      age: 18
+    }
+    actions.onGlobalStateChange((state, prevState) => {
+      console.log('当前的', state);
+      console.log('修改之前的', prevState);
+      for(let key in this.info) {
+        this.info[key] = state[key]
+      }
+    })
+    actions.setGlobalState(data);
+  },
+  methods: {
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    setGlobalVariable() {
+      actions.setGlobalState({name: '张三', age: 18});
+    }
   }
+}
 </script>
 
 <style>

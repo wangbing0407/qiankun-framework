@@ -4,8 +4,13 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 import routes from './router'
 import store from './store'
+import action from './utils/action'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.config.productionTip = false
+
+Vue.use(ElementUI)
 
 let router = null
 let instance = null
@@ -30,6 +35,7 @@ export async function bootstrap() {
 }
 
 export async function mount(props) {
+  action.setActions(props)
   render(props)
 }
 
