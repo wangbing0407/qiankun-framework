@@ -7,7 +7,7 @@
           <i class="el-icon-menu"></i>
           <span slot="title">vue2子应用</span>
         </el-menu-item>
-        <el-menu-item index="3">
+        <el-menu-item index="/app-vue3">
           <i class="el-icon-menu"></i>
           <span slot="title">vue3子应用</span>
         </el-menu-item>

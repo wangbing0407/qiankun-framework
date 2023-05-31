@@ -18,6 +18,13 @@ const apps = [
     activeRule: '/app-vue-hash',
     props: { data: { store, router } },
   },
+  {
+    name: 'app-vue3',
+    entry: 'http://localhost:9913',
+    container: '#appContainer',
+    activeRule: '/app-vue3',
+    props: { data: {} },
+  },
 ]
 
 registerMicroApps(apps, {
