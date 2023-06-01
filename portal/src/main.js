@@ -25,6 +25,13 @@ const apps = [
     activeRule: '/app-vue3',
     props: { data: {} },
   },
+  {
+    name: 'app-react',
+    entry: 'http://localhost:9914',
+    container: '#appContainer',
+    activeRule: '/app-react',
+    props: { data: {} },
+  },
 ]
 
 registerMicroApps(apps, {

@@ -8,10 +8,12 @@
     "install:portal": "cd portal && npm install",
     "install:app-vue-hash": "cd app-vue-hash && npm install",
     "install:app-vue3": "cd app-vue3 && npm install",
+    "install:app-react": "cd app-react && npm install",
     "start": "npm-run-all --parallel start:*",
     "start:portal": "cd portal && npm start",
     "start:app-vue-hash": "cd app-vue-hash && npm start",
-    "start:app-vue3": "cd app-vue3 && npm start"
+    "start:app-vue3": "cd app-vue3 && npm start",
+    "start:app-react": "cd app-react && npm start"
   },
   "repository": {
     "type": "git",

@@ -11,9 +11,9 @@
           <i class="el-icon-menu"></i>
           <span slot="title">vue3子应用</span>
         </el-menu-item>
-        <el-menu-item index="4">
-          <i class="el-icon-setting"></i>
-          <span slot="title">导航四</span>
+        <el-menu-item index="/app-react">
+          <i class="el-icon-menu"></i>
+          <span slot="title">react子应用</span>
         </el-menu-item>
       </el-menu>
     </div>
