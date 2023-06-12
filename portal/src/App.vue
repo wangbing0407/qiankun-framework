@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="menu-left">
-      <el-menu :router="true" default-active="2" class="el-menu-vertical-demo"  @open="handleOpen"
+      <el-menu :router="true" :default-active="$route.path" class="el-menu-vertical-demo"  @open="handleOpen"
         @close="handleClose" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
         <el-menu-item index="/app-vue-hash">
           <i class="el-icon-menu"></i>
